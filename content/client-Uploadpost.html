@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CS5003 Group T</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/0fb65ecdbf.js" crossorigin="anonymous"></script>
+
+    <!-- Leaflet External JS & CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" crossorigin="" />
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js" crossorigin=""></script>
+
+    <!-- leaflet.js file taken from UNPKG https://unpkg.com/browse/leaflet@1.7.1/dist/ -->
+    <!--<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> -->
+</head>
+
+<body>
+    <header>
+        <!-- SD302: Navigation bar -->
+        <div id="nav">
+            <a href="index.html">Home</a>
+            <a href="client-Uploadpost.html"> Upload Post</a>
+            <!-- SD302: Navigation bar - category dropdown -->
+            <div class="dropdown">
+                <button class="dropbtn">Categories
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="client-BeachPage.html" style="float: none;
+                  text-decoration: none;
+                  display: block;
+                  text-align: left;" id="beachButton">Beach</a>
+                  <a href="client-FoodPage.html" style="float: none;
+                  text-decoration: none;
+                  display: block;
+                  text-align: left;">Food</a>
+                  <a href="client-SportPage.html" style="float: none;
+                  text-decoration: none;
+                  display: block;
+                  text-align: left;">Sports</a>
+                  <a href="client-MuseumPage.html" style="float: none;
+                  text-decoration: none;
+                  display: block;
+                  text-align: left;">Museum</a>
+                  <a href="client-AttractionsPage.html" style="float: none;
+                  text-decoration: none;
+                  display: block;
+                  text-align: left;">Attractions</a>
+                </div>
+        
+              </div>
+            <a id="login" style="float:right">Log In</a>
+            <a href="signup.html" style="float:right">Sign up</a>
+    </header>
+    <main>
+        <h1 style="text-align: center;">Share your holiday notes now!</h1>
+        <!-- KPF1: restructured syntax to avoid repetition
+    changed icon into item class to avoid excessive code
+    restructured to be user-friendly with toggling pages in JS function Activate()-->
+        <!-- KPF1: Post Page -->
+        <div id="postPage" class="category_cards postPage" style="display:block;">
+
+            <div id="leftPostPage" class="leftPostPage">
+                <div class=topIconsPP>
+                    <input id="titleInput" placeholder="Enter Title">
+                    <select name="typeDropDown" id="typeDropDown">
+                        <option value="">--Select Type--</option>
+                        <option value="Beach">Beach</option>
+                        <option value="Food">Food</option>
+                        <option value="Sport">Sport</option>
+                        <option value="Museum">Museum</option>
+                        <option value="Attraction">Attraction</option>
+                    </select>
+                    <select name="ratingDropDown" id="ratingDropDown">
+                        <option value="">--Select Rating--</option>
+                        <option value="1 Star">1 Star</option>
+                        <option value="2 Stars">2 Stars</option>
+                        <option value="3 Stars">3 Stars</option>
+                        <option value="4 Stars">4 Stars</option>
+                        <option value="5 Stars">5 Stars</option>
+                    </select>
+                    <!-- here add adress property -->
+                    <input id="adressInput" onchange="post()" type="adress" placeholder="Enter UK Postal Code" required />
+                    <p id = "result1" style = "display:none"></p>
+                    <p id = "resultTown" style = "display:none"></p>
+
+                </div>
+                <div class="transportation">
+                    <label for transportation>How Did You Get There?</label>
+                    <input type="checkbox" id="car" name="transportation" value="car"> Car</input>
+                    <input type="checkbox" id="subway" name="transportation" value="subway">Subway</input>
+                </div>
+                <textarea id="commentInput" placeholder="Enter Comment"></textarea>
+                
+            </div>
+
+            <div id="rightPostPage" class="rightPostPage">
+                <div class=imageUploadContainer>
+                 <!-- <form runat="file"> -->
+                    <div class = "image">
+                        <label for clientUploadedImg>Preview of Image You are Uploading Will Appear Here:</label>
+                        <form runat ="file">
+                        <input accept ="image/*" type="file" id ="fileUpload" />
+                        <img id ="clientUploadedImg" src="#" alt="your image"/>
+                        <canvas id="canvas" class="result"></canvas>
+                        </form>
+                    </div>
+                      
+                    <!-- <form runat="file"> -->
+                       <!---- <label for="upload-img">  
+                            <input type="file" id="upload-img" value="choose img" accept="image/gif, image/jpg, image/png" />
+                        </label>
+                        <input accept="image/*" type="file" id="imageUpload" />
+                       <img id="userImage" src="#" alt="user image" /> -->
+                </div>
+                <div class="makePostContainer">
+                    <button id="uploadPost">Make Post</button>
+                    <button id="clearPost">Clear Submission</button>
+
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </main>
+        <script src="login&signup.js"></script>
+        <script src="client-Upload.js"></script>
+    <!-- <footer>
+    <p>Created by: sd302, kpf1, , , </p>
+  </footer> -->
+</body>
+</html>

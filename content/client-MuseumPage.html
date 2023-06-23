@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Museums</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/0fb65ecdbf.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <h1>HOLIDAY FUN</h1>
+    <p><b>Plan your holiday today!</b></p>
+
+    <!-- SD302: Navigation bar -->
+    <div id="nav">
+      <a href="index.html">Home</a>
+      <a href="client-Uploadpost.html"> Upload Post</a>
+      <!-- SD302: Navigation bar - category dropdown -->
+      <!-- <div class="dropdown">
+        <button class="dropbtn">Categories
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="client-BeachPage.html" style="float: none;
+              text-decoration: none;
+              display: block;
+              text-align: left;" id="beachButton">Beach</a>
+          <a href="client-FoodPage.html" style="float: none;
+              text-decoration: none;
+              display: block;
+              text-align: left;">Food</a>
+          <a href="client-SportPage.html" style="float: none;
+              text-decoration: none;
+              display: block;
+              text-align: left;">Sports</a>
+          <a href="client-MuseumPage.html" style="float: none;
+              text-decoration: none;
+              display: block;
+              text-align: left;">Museum</a>
+          <a href="client-AttractionsPage.html" style="float: none;
+              text-decoration: none;
+              display: block;
+              text-align: left;">Attractions</a>
+        </div>
+      </div> -->
+      <a id="login" style="float:right">Log In</a>
+      <a href="signup.html" style="float:right">Sign up</a>
+      <div class="cards_wrapper" style="display: flex;flex-direction: row; float: left">
+        <div>
+          <a href="client-BeachPage.html" class="button"><i class="cards fa-solid fa-umbrella-beach fa-xl"></i>Beach</a>
+          <a href="client-FoodPage.html" class="button"><i class="cards fa-solid fa-pizza-slice fa-xl"></i> Food</a>
+          <a href="client-SportPage.html" class="button"><i class="cards fa-solid fa-ranking-star fa-xl"></i>Sport</a>
+          <a href="client-MuseumPage.html" class="button"><i class="cards fa-solid fa-building-columns fa-xl"></i>Museum</a>
+            <a href="client-AttractionsPage.html" class="button"><i class="cards fa-solid fa-sun fa-xl"></i>Attractions</a>
+        </div>
+        <div style="display: flex; flex-direction: row; float: right">
+          <!-- <input id="location" placeholder="get the weather by location!" style="outline: 0;border-radius: .5rem" /> -->
+          <!-- <button style="margin: 0px .5rem" onclick="queryWeather()">Search</button> -->
+        </div>
+      </div>
+    </div>
+      </header>
+      
+      <div id="filter" style="padding-right: 2%;float:right;padding-top: 1%;">
+        <label>Time after:</label>
+        <input type="date" id="selectDate" value="2023-03-01">
+        <label>Rating:</label>
+        <select id="selrating" name="rating">
+          <option value="1 Stars">All</option>
+          <option value="2 Stars">2 Stars and above</option>
+          <option value="3 Stars">3 Stars and above</option>
+          <option value="4 Stars">4 Stars and above</option>
+          <option value="5 Stars">only 5 Stars</option>
+        </select>
+        <button id="filterBtn">Apply & Filter</button>
+        <button id="clearBtn">Clear</button>
+      </div>
+    <main class="wrapper">
+      <div id="showposts">
+        <h1>Welcome to the Museum Page</h1>
+        <section id="museumEvents"></section>
+        <p>This is the page for all things museum-related.</p>
+      </div>
+      <section id="viewPost" style="display: none">
+        <div class="grid-container" style="width:95%;padding: 20px;">
+          <div class="grid-item item-1">
+            <!-- <h2>*HERE shows the contnent</h2> -->
+            <div class="card" style="width: 40%;float:left" id="post" style="width:40%;padding: 20px;">
+              <div class="card-body">
+                <h5 class="card-title" id="postName">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary" id="postRating">Card rating</h6>
+                <p class="card-text" id="postType">type</p>
+                <p class="card-text" id="postComment">comments</p>
+                <p class="card-text" id="postLocation">location</p>
+                <p class="card-text" id="postTransportation">transportation</p>
+                <p class="card-text" id="postDate">time</p>
+                <p class="card-text" id="postUsername">author</p>
+              </div>
+            </div>
+            <div id="postImg">
+            </div>
+          </div>      
+        </div>
+        <div>
+          <div class="card" style="width:95%;padding: 10px">
+            <div class="card-body">
+              <h5 class="card-title">Add your comment now:</h5>
+              <span>Is this Post useful?</span>
+              <select name="ratingDropDown" id="postrating">
+                <option value="">--Select Rating--</option>
+                <option value="1 Star">1 Star</option>
+                <option value="2 Stars">2 Stars</option>
+                <option value="3 Stars">3 Stars</option>
+                <option value="4 Stars">4 Stars</option>
+                <option value="5 Stars">5 Stars</option>
+              </select><br>
+              <input type="text" class="card-text" id="newcomment" name="des"
+                style="background-color: rgb(243, 229, 183);"><br>
+              <button id="com-submit" class="btn btn-primary">Submit</button>
+              <button id="clearcom" class="btn btn-primary">Clear</button>
+            </div>
+          </div>
+          <div id="postComments" style="width:95%;padding: 10px;">
+          </div>
+        </div>
+        </div>
+        </div>
+      </section>
+    </main>
+    <script src="client-Museum.js"></script>
+    <script src="login&signup.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+    <!-- <footer>
+        <p>Created by: sd302, kpf1, , ,  </p>
+      </footer> -->
+</body>
+
+</html>
