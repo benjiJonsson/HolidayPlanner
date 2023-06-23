@@ -1,4 +1,4 @@
-# About this project:Holiday fun!
+# About this project: Holiday fun!
 The project successfully created a web application that allows users to register, log in, input and browse activity information, and generate recommendations based on that data.
 
 ## How to run?
